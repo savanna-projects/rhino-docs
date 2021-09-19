@@ -1,0 +1,15 @@
+[test-id]         SaveTasksNumber
+[test-scenario]   Saves the total number of tasks as appears in the pagination panel under tasks page.
+
+[test-parameters]
+|Parameter     |Description                                                                                           |
+|--------------|------------------------------------------------------------------------------------------------------|
+|parameter_name|The parameter name under which to save the tasks number. The parameter will be saved on session level.|
+
+[test-actions]
+1. register parameter {{$ --name:@parameter_name --scope:session}} take {pagination range} with regex {(?<=\/)\d+(?=\)$)}
+
+[test-examples]
+|Example                                             |Description                                                                                                     |
+|----------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+|save tasks number {{$ --parameter_name:TasksBefore}}|Saves the total number of tasks as appears in the pagination panel under tasks page into 'TasksBefore' prameter.|

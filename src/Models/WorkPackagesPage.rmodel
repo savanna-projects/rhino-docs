@@ -1,0 +1,14 @@
+[test-models] Work Packages
+|name                            |value                                                              |type |comment                                                                   |
+|--------------------------------|-------------------------------------------------------------------|-----|--------------------------------------------------------------------------|
+|pagination range                |//li[@class='pagination--range']/span[not(@id)]                    |xpath|The range element under which you can find the total number of tasks.     |
+|create button                   |//button[.='Create']                                               |xpath|The create button on the top left corner of the screen.                   |
+|task list-item                  |//ul[@role='menu']/li[.='Task']                                    |xpath|The 'TASK' list item from the items list once clicking on 'Create' button.|
+|new task text-box               |//div[contains(@class,'new--subject')]//input                      |xpath|The text-box into which to type the new task name.                        |
+|save new task button            |//button[.='Save']                                                 |xpath|The 'Save' button on the bottom left section under the 'New Task' panel.  |
+|task create success notification|//notification//span[.='Successful creation.']                     |xpath|The notification that appears once a 'TASK' was successfully created.     |
+|task filter button              |//button[contains(.,'Filter')]                                     |xpath|The 'Filter' button on the the top right section of the screen.           |
+|task filter text-box            |//li[./label[.='Filter by text']]//input                           |xpath|The text-box into which to type the task name.                            |
+|new task title                  |//editable-attribute-field//span[.='New' or .='Task']              |xpath|The 'Task' title part under 'New Task' panel.                             |
+|task name panel                 |//editable-attribute-field//span[.='{{$getparam --name:TaskName}}']|xpath|The task name under the task panel, once saved.                           |
+|task name table cell            |//td/span[.='{{$getparam --name:TaskName --scope:session}}']       |xpath|The task name under the tasks list table, once saved.                     |

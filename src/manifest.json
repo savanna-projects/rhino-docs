@@ -1,0 +1,27 @@
+{
+	"rhinoServer": {
+		"schema": "http",
+		"host": "localhost",
+		"port": "9000"
+	},
+	"connectorConfiguration": {
+		"collection": null,
+		"connector": "connector_text",
+		"password": null,
+		"project": null,
+		"userName": null
+	},
+	"authentication": {
+		"userName": "automation@rhino.api",
+		"password": "Aa123456!"
+	},
+	"driverParameters": [
+		{
+			"driver": "MockWebDriver",
+			"driverBinaries": "D:\\AutomationEnvironment\\WebDrivers"
+		}
+	],
+	"engineConfiguration": {
+		"maxParallel": 3
+	}
+}

@@ -1,0 +1,16 @@
+[test-id]         CreateUniqueName
+[test-scenario]   Creates a unique name and save it into the given paramter.
+
+[test-parameters]
+|Parameter     |Description                                                                                          |
+|--------------|-----------------------------------------------------------------------------------------------------|
+|parameter_name|The parameter name under which to save the unique name. The parameter will be saved on session level.|
+|prefix        |A prefix to apply to the unique name.                                                                |
+
+[test-actions]
+1. register parameter {{$ --name:@parameter_name --scope:session}} take {@prefix_*{{$guid}}*_}
+
+[test-examples]
+|Example                                                         |Description                                                                   |
+|----------------------------------------------------------------|------------------------------------------------------------------------------|
+|create unique name {{$ --parameter_name:TaskName --prefix:Task}}|Creates a unique name with 'Task' prefix and save it into 'TaskName' paramter.|

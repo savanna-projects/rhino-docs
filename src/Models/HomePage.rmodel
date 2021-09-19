@@ -1,0 +1,8 @@
+[test-models] Home Page
+|name                   |value                                                                                      |type |comment|
+|-----------------------|-------------------------------------------------------------------------------------------|-----|-------|
+|add project button     |//a[contains(@class,'button') and ./i[contains(@class,'icon-add')] and ./span[.='Project']]|xpath|       |
+|project menu           |//a[./span[.='{{$getparam --name:ProjectName --scope:session}}']]                          |xpath|       |
+|project search text-box|project_autocompletion_input                                                               |id   |       |
+|select a project       |projects-menu                                                                              |id   |       |
+|demo project list-item |//li[@id='project-search-container']//li[.//a[.='Demo project']]                           |xpath|       |

@@ -1,0 +1,4 @@
+[test-models] Navigation Panel
+|name              |value                                                |type|comment                                                     |
+|------------------|-----------------------------------------------------|----|------------------------------------------------------------|
+|work packages menu|//span[.='Work packages']/ancestor::a[@wp-query-menu]|    |Work Package menu on the left navigation panel (side panel).|

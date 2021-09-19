@@ -1,0 +1,5 @@
+[test-models] Project Overview
+|name               |value                                                                                                           |type|comment                                          |
+|-------------------|----------------------------------------------------------------------------------------------------------------|----|-------------------------------------------------|
+|project status list|//ng-component[./widget-header[contains(.,'Project status')]]//edit-form/div[@class='project-status--container']|    |A custom combo-box under Project Status panel.   |
+|on track list-item |//div[./span[.='On track']]                                                                                     |    |Project status On Track under Project Status List|

@@ -1,0 +1,9 @@
+[test-models] Login Panel
+|name              |value                                                           |type|comment                                                                  |
+|------------------|----------------------------------------------------------------|----|-------------------------------------------------------------------------|
+|sign in menu-item |//li[./a[.='Sign in']]                                          |    |Sign in menu-item on top left corner of the screen.                      |
+|user name text-box|//div[./label[.='Username']]//input[@type='text']               |    |User name text-box under login panel (opens after clicking on 'Sign in').|
+|password text-box |//div[./label[.='Password']]//input[@type='password']           |    |Password text-box under login panel (opens after clicking on 'Sign in'). |
+|sign in button    |//input[(@type='submit' or @type='button') and @value='Sign in']|    |Sign in button under login panel (opens after clicking on 'Sign in').    |
+|user menu         |//li[./a/i]//op-principal/div                                   |    |User menu (appears after a successful login).                            |
+|logout menu-item  |//li[@data-name='logout']                                       |    |Logout menu-item under 'User Menu'.                                      |

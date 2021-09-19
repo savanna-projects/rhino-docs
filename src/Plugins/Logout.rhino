@@ -1,0 +1,19 @@
+[test-id]         LogoutFromOpenProject
+[test-scenario]   Performs a logout routine from OpenProject application.
+
+[test-parameters]
+|Parameter|Description                               |
+|---------|------------------------------------------|
+|app      |The application endpoint.                 |
+|user     |The user name of the application instance.|
+|password |The password of the application instance. |
+
+[test-actions]
+1. click on {user menu}
+2. click on {logout menu-item}
+3. wait for element on {sign in menu-item}
+
+[test-examples]
+|Example                 |Description                                            |
+|------------------------|-------------------------------------------------------|
+|logout from open project|Performs a logout routine from OpenProject application.|

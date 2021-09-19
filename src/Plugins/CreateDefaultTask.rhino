@@ -1,0 +1,25 @@
+[test-id]         CreateDefaultTask
+[test-scenario]   Performs a task creation routine with default settings and only mandatory fields.
+
+[test-parameters]
+|Parameter     |Description                                                                                        |
+|--------------|---------------------------------------------------------------------------------------------------|
+|parameter_name|The parameter name under which to save the task name. The parameter will be saved on session level.|
+|task_name     |The task name to use when creating the task.                                                       |
+
+[test-actions]
+1. register parameter {{$ --name:@parameter_name --scope:session}} take {@task_name}
+2. click on {create button}
+3. click on {task list-item}
+4. send keys {{$getparam --name:@parameter_name --scope:session}} into {new task text-box}
+5. click on {save new task button}
+6. wait for element on {task create success notification}
+
+[test-expected-results]
+[3] verify that {count} status of {new task title} equal {2}
+[5] verify that {exists} status of {task name panel} equal {true}
+
+[test-examples]
+|Example                                                                 |Description                                                                           |
+|------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
+|create default task {{$ --parameter_name:TaskName --name:My First Task}}|Creates a new task with the name 'My First Task' and save it into 'TaskName' paramter.|

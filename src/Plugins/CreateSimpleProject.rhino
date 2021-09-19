@@ -1,0 +1,24 @@
+[test-id]         CreateSimpleProject
+[test-scenario]   Performs a project creation routine with default settings and only mandatory fields.
+
+[test-parameters]
+|Parameter|Description                               |
+|---------|------------------------------------------|
+|app      |The application endpoint.                 |
+|user     |The user name of the application instance.|
+|password |The password of the application instance. |
+
+[test-actions]
+1. go to url {@app}
+2. login to open project {{$ --user:@user --password:@password}}
+3. create default project {{$ --name:unique project name --description:Created by Automation Script.}}
+4. set project status {{$ --status:On track}}
+5. click on {work packages menu}
+
+/** Out of Bound
+[14] verify that {exists} status of {//a[./span[.='{{$getparam --name:@parameter}}']]} equal {true}
+
+[test-examples]
+|Example                                                                |Description                         |
+|-----------------------------------------------------------------------|------------------------------------|
+|create simple project {{$ --app:http://p.io --user:Foo --password:Bar}}|Performs a project creation routine.|

@@ -1,0 +1,29 @@
+[test-id]         Test009Models
+[test-scenario]   verify that new project created when create a new project using the user interface
+[test-priority]   1 - critical
+[test-severity]   1 - critical
+[test-tolerance]  0%
+
+[test-actions]
+/** LOGIN
+1.  go to url {open-project application}
+2.  click on {sign in menu-item}
+3.  send keys {open-project user name} into {user name text-box}
+4.  send keys {open-project password} into {password text-box}
+5.  click on {sign in button}
+/** ADD PROJECT
+6.  click on {add project button}
+7.  register parameter {{$ --name:ProjectName --scope:session}} take {unique project name}
+8.  send keys {{$getparam --name:ProjectName --scope:session}} into {project name text-box}
+9.  click on {advanced settings button}
+10. execute script {arguments[0].innerHTML='Created by Automation Script.'} on {project description}
+11. click on {project save button}
+12. click on {project status list}
+13. click on {on track list-item}
+14. click on {work packages menu}
+15. close browser
+
+[test-expected-results]
+[5]  verify that {text} of {user menu} equal {OA}
+[12] verify that {exists} of {project menu} equal {true}
+[14] verify that {exists} of {project menu} equal {true}

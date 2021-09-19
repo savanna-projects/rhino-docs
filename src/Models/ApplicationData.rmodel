@@ -1,0 +1,9 @@
+[test-models] Application Data
+|name                    |value                                                                  |type  |comment                                                                                     |
+|------------------------|-----------------------------------------------------------------------|------|--------------------------------------------------------------------------------------------|
+|open-project application|http://localhost:8080                                                  |static|Application under test endpoint.                                                            |
+|open-project user name  |admin                                                                  |static|Admin user name.                                                                            |
+|open-project password   |qawsedrf1!                                                             |static|Admin password.                                                                             |
+|unique project name     |Project _*{{$guid}}*_                                                  |static|Creates a unique project name with GUID identifier. New name will be created with each call.|
+|unique task name        |Task _*{{$guid}}*_                                                     |static|Creates a unique Task name with GUID identifier. New name will be created with each call.   |
+|basic                   |apikey:1dc665be8a21c3faca78fa0b493a1a0cde171f2ef760dd7af8ad472e4bccee99|static|Basic authentication value.                                                                 |

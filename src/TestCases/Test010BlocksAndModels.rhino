@@ -1,0 +1,18 @@
+[test-id]         Test010BlocksAndModels
+[test-scenario]   verify that taks created when creating a task under an existing project
+[test-priority]   1 - critical
+[test-severity]   1 - critical
+[test-tolerance]  0%
+
+[test-actions]
+1. go to url {open-project application}
+2. login to open project {{$ --user:open-project user name --password:open-project password}}
+3. navigate to work packages {{$ --project_name:Demo project}}
+4. save tasks number {{$ --parameter_name:TasksBefore}}
+5. create default task {{$ --parameter_name:TaskName --task_name:unique task name}}
+6. save tasks number {{$ --parameter_name:TasksAfter}}
+7. search tasks {{$ --find_by:{{$getparam --name:TaskName --scope:session}}}}
+8. close browser
+
+[test-expected-results]
+[6] verify that {text} of {{$getparam --name:TasksAfter --scope:session}} is greater than {{$getparam --name:TasksBefore --scope:session}}

@@ -1,0 +1,7 @@
+[test-models] Add Project Page
+|name                    |value                                                                      |type|comment                                                                                |
+|------------------------|---------------------------------------------------------------------------|----|---------------------------------------------------------------------------------------|
+|project name text-box   |//op-form-field[./label[contains(.,'Name')]]//input[@type='text']          |    |Project name text-box on the central panel.                                            |
+|advanced settings button|//button[contains(.,'Advanced settings')]                                  |    |Advanced Settings button on the central panel (will expand/collapse advanced settings).|
+|project description     |//op-form-field[./label[contains(.,'Description')]]//div[@role='textbox']/p|    |Project description rich text-box under Advanced Settings panel.                       |
+|project save button     |//button[contains(.,'Save')]                                               |    |Project save button on the bottom left corner of the screen.                           |

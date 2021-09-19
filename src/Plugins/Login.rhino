@@ -1,0 +1,22 @@
+[test-id]         LoginToOpenProject
+[test-scenario]   Performs a login routine into OpenProject application.
+
+[test-parameters]
+|Parameter|Description                                 |
+|---------|--------------------------------------------|
+|user     |Open-Project user name (default is 'admin').|
+|password |Open-Project password (default is 'admin'). |
+
+[test-actions]
+1. click on {sign in menu-item}
+2. send keys {@user} into {user name text-box}
+3. send keys {@password} into {password text-box}
+4. click on {sign in button}
+
+[test-expected-results]
+[4] verify that {text} of {user menu} equal {OA}
+
+[test-examples]
+|Example                                                  |Description                                           |
+|---------------------------------------------------------|------------------------------------------------------|
+|login to open project {{$ --user:admin --password:admin}}|Performs a login routine into OpenProject application.|

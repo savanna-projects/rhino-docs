@@ -1,0 +1,29 @@
+[test-id]         Test009Flat
+[test-scenario]   verify that new project created when create a new project using the user interface
+[test-priority]   1 - critical
+[test-severity]   1 - critical
+[test-tolerance]  0%
+
+[test-actions]
+/** LOGIN
+1.  go to url {http://localhost:8080}
+2.  click on {//li[./a[.='Sign in']]}
+3.  send keys {admin} into {//div[./label[.='Username']]//input[@type='text']}
+4.  send keys {qawsedrf1!} into {//div[./label[.='Password']]//input[@type='password']}
+5.  click on {//input[(@type='submit' or @type='button') and @value='Sign in']}
+/** ADD PROJECT
+6.  click on {//a[contains(@class,'button') and ./i[contains(@class,'icon-add')] and ./span[.='Project']]}
+7.  register parameter {{$ --name:ProjectName --scope:session}} take {Project _*{{$guid}}*_}
+8.  send keys {{$getparam --name:ProjectName --scope:session}} into {//op-form-field[./label[contains(.,'Name')]]//input[@type='text']}
+9.  click on {//button[contains(.,'Advanced settings')]}
+10. execute script {arguments[0].innerHTML='Created by Automation Script.'} on {//op-form-field[./label[contains(.,'Description')]]//div[@role='textbox']/p}
+11. click on {//button[contains(.,'Save')]}
+12. click on {//ng-component[./widget-header[contains(.,'Project status')]]//edit-form/div[@class='project-status--container']}
+13. click on {//div[./span[.='On track']]}
+14. click on {//span[.='Work packages']/ancestor::a[@wp-query-menu]}
+15. close browser
+
+[test-expected-results]
+[5]  verify that {text} of {//li[./a/i]//op-principal/div} equal {OA}
+[12] verify that {exists} of {//a[./span[.='{{$getparam --name:ProjectName --scope:session}}']]} equal {true}
+[14] verify that {exists} of {//a[./span[.='{{$getparam --name:ProjectName --scope:session}}']]} equal {true}

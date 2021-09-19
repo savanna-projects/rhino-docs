@@ -1,0 +1,16 @@
+[test-id]         SetProjectStatus
+[test-scenario]   Performs set project status routine on Project Overview page.
+
+[test-parameters]
+|Parameter|Description                  |
+|---------|-----------------------------|
+|status   |The project status to assign.|
+
+[test-actions]
+1. click on {project status list}
+2. click on {//div[./span[.='@status']]}
+
+[test-examples]
+|Example                                   |Description                           |
+|------------------------------------------|--------------------------------------|
+|set project status {{$ --status:On track}}|Performs 'Set Project Status' routine.|

@@ -1,0 +1,18 @@
+[test-id]         NavigateToWorkPackages
+[test-scenario]   Navigate to 'Work Packages' section of a given project.
+
+[test-parameters]
+|Parameter   |Description                                               |
+|------------|----------------------------------------------------------|
+|project_name|The project name for which to navigate to 'Work Packages'.|
+
+[test-actions]
+1. click on {select a project}
+2. send keys {{$ --keys:@project_name --interval:50}} into {project search text-box}
+3. click on {//li[@id='project-search-container']//li[.//a[.='@project_name']]}
+4. click on {work packages menu}
+
+[test-examples]
+|Example                                                    |Description                                    |
+|-----------------------------------------------------------|-----------------------------------------------|
+|navigate to work packages {{$ --project_name:Demo project}}|Navigate to 'Work Packages' for 'Demo project'.|

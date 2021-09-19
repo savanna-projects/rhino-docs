@@ -1,0 +1,19 @@
+[test-id]         SearchTasks
+[test-scenario]   Performs a seatch tasks routine starting from 'Work Packages' page.
+
+[test-parameters]
+|Parameter|Description                                 |
+|---------|--------------------------------------------|
+|find_by  |The task name to use when creating the task.|
+
+[test-actions]
+1. click on {task filter button}
+2. send keys {{$ --keys:@find_by --interval:50}} into {task filter text-box}
+
+[test-expected-results]
+[2] verify that {exists} status of {task name table cell} equal {true}
+
+[test-examples]
+|Example                                   |Description                                         |
+|------------------------------------------|----------------------------------------------------|
+|search tasks {{$ --find_by:My First Task}}|Find all tasks that contains 'My First Task' phrase.|

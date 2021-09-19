@@ -1,0 +1,20 @@
+[test-id]         GetProject
+[test-scenario]   Sends a "Get-Project" request to OpenProject API.
+
+[test-parameters]
+|Parameter|Description                                                               |
+|---------|--------------------------------------------------------------------------|
+|app      |The application endpoint.                                                 |
+|id       |The project project ID to find by.                                        |
+|auth     |The basic authentication to use in the following format <user>:<password>.|
+
+[test-actions]
+1. get request {{$ --auth:@auth}} on {@app/api/v3/projects/@id}
+
+[test-expected-results]
+[1] verify that {status_code} equal {200}
+
+[test-examples]
+|Example                                                                  |Description                                      |
+|-------------------------------------------------------------------------|-------------------------------------------------|
+|get project {{$ --app:http://localhost:8080 --auth:user:password --id:1}}|Get project with ID 1 from http://localhost:8080.|

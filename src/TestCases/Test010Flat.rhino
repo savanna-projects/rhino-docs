@@ -1,0 +1,42 @@
+[test-id]         Test010Flat
+[test-scenario]   verify that taks created when creating a task under an existing project
+[test-priority]   1 - critical
+[test-severity]   1 - critical
+[test-tolerance]  0%
+
+[test-actions]
+/** LOGIN
+1.  go to url {http://localhost:8080}
+2.  click on {//li[./a[.='Sign in']]}
+3.  send keys {admin} into {//div[./label[.='Username']]//input[@type='text']}
+4.  send keys {qawsedrf1!} into {//div[./label[.='Password']]//input[@type='password']}
+5.  click on {//input[(@type='submit' or @type='button') and @value='Sign in']}
+/** FIND AND OPEN PROJECT PACKAGES
+6.  click on {//li[./a[@id='projects-menu']]}
+7.  send keys {{$ --keys:Demo project --interval:50}} into {project_autocompletion_input} by {id}
+8.  click on {//li[@id='project-search-container']//li[.//a[.='Demo project']]}
+9.  click on {//span[.='Work packages']/ancestor::a[@wp-query-menu]}
+/** SAVE TOTAL TASK NUMBER
+10. register parameter {{$ --name:TasksBefore --scope:session}} take {//li[@class='pagination--range']/span[not(@id)]} with regex {(?<=\/)\d+(?=\)$)}
+/** CREATE A TASK
+11. register parameter {{$ --name:TaskName --scope:session}} take {Task _{{$guid}}_}
+12. click on {//button[.='Create']}
+13. click on {//ul[@role='menu']/li[.='Task']}
+14. send keys {{$getparam --name:TaskName --scope:session}} into {//div[contains(@class,'new--subject')]//input}
+15. click on {//button[.='Save']}
+/** FORCE WAITING FOR CREATION TO BE COMPLETED
+16. wait for element on {//notification//span[.='Successful creation.']}
+/** RE-COLLECT
+17. register parameter {{$ --name:TasksAfter --scope:session}} take {//li[@class='pagination--range']/span[not(@id)]} with regex {(?<=\/)\d+(?=\)$)}
+/** EXPLICIT FILTER
+18. click on {//button[contains(.,'Filter')]}
+19. send keys {{$ --keys:{{$getparam --name:TaskName --scope:session}} --interval:50}} into {//li[./label[.='Filter by text']]//input}
+/** COMPLETE
+20. close browser
+
+[test-expected-results]
+[5]  verify that {text} of {//li[./a/i]//op-principal/div} equal {OA}
+[13] verify that {count} of {//editable-attribute-field//span[.='New' or .='Task']} equal {2}
+[15] verify that {exists} status of {//editable-attribute-field//span[.='{{$getparam --name:TaskName}}']} equal {true}
+[17] verify that {text} of {{$getparam --name:TasksAfter --scope:session}} is greater than {{$getparam --name:TasksBefore --scope:session}}
+[19] verify that {exists} status of {//td/span[.='{{$getparam --name:TaskName --scope:session}}']} equal {true}

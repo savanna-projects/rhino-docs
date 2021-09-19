@@ -1,0 +1,19 @@
+[test-id]         Test010AndTest009BusinessBlocks
+[test-scenario]   verify that project and taks created when creating a task under an existing project
+[test-priority]   1 - critical
+[test-severity]   1 - critical
+[test-tolerance]  0%
+
+[test-data-provider]
+|app                  |user |password  |
+|---------------------|-----|----------|
+|http://localhost:8080|admin|qawsedrf1!|
+|http://localhost:8080|admin|qawsedrf1!|
+|http://localhost:8080|admin|qawsedrf1!|
+
+[test-actions]
+1. create simple project {{$ --app:@app --user:@user --password:@password}}
+2. logout from open project
+3. wait {3000}
+4. create simple task {{$ --app:@app --user:@user --password:@password --project:{{$getparam --name:ProjectName --scope:session}}}}
+5. close browser

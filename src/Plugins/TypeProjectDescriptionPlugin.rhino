@@ -1,0 +1,15 @@
+[test-id]         TypeProjectDescription
+[test-scenario]   Type a description into project description text-box under Add Project > Advanced Settings.
+
+[test-parameters]
+|Parameter  |Description                                                       |
+|-----------|------------------------------------------------------------------|
+|description|The project description to type into project description text-box.|
+
+[test-actions]
+1. execute script {arguments[0].innerHTML='@description'} on {project description}
+
+[test-examples]
+|Example                                             |Description                                                                                  |
+|----------------------------------------------------|---------------------------------------------------------------------------------------------|
+|type project description {{$ --description:Foo Bar}}|Type a description into project description text-box under 'Add Project > Advanced Settings'.|

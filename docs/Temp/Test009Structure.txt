@@ -1,0 +1,50 @@
+/**┌[ NOTES ]────────────────────────────────────────────────────┐
+/**│                                                             │
+/**│ This test uses both models and plugins (blocks).            │
+/**│ The plugins are using the models and other plugins (block). │
+/**└─────────────────────────────────────────────────────────────┘
+/** PLUGINS (block) HIERARCHY
+/** GoToUrl               - LVL1 Block
+/** LoginToOpenProject    - LVL2 Block
+/**   - Click             - LVL1 Block
+/**   - SendKeys          - LVL1 Block
+/**   - SendKeys          - LVL1 Block
+/**   - Click             - LVL1 Block
+/** CreateDefaultProject  - LVL2 Block
+/**   - Click             - LVL1 Block
+/**   - RegisterParameter - LVL1 Block
+/**   - SendKeys          - LVL1 Block
+/**   - Click             - LVL1 Block
+/**   - ExecuteScript     - LVL1 Block
+/**   - Click             - LVL1 Block
+/** SetProjectStatus      - LVL2 Block
+/**   - Click             - LVL1 Block
+/**   - Click             - LVL1 Block
+/** Click                 - LVL1 Block
+/** CloseBrowser          - LVL1 Block
+
+/**┌[ NOTES ]────────────────────────────────────────────────────┐
+/**│                                                             │
+/**│ This test uses both models and plugins (blocks).            │
+/**│ The plugins are using the models and other plugins (block). │
+/**└─────────────────────────────────────────────────────────────┘
+/** PLUGINS (block) HIERARCHY
+/** CreateSimpleProject       - LVL3 Block
+/**   - GoToUrl               - LVL1 Block
+/**   - LoginToOpenProject    - LVL2 Block
+/**       - Click             - LVL1 Block
+/**       - SendKeys          - LVL1 Block
+/**       - SendKeys          - LVL1 Block
+/**       - Click             - LVL1 Block
+/**   - CreateDefaultProject  - LVL2 Block
+/**       - Click             - LVL1 Block
+/**       - RegisterParameter - LVL1 Block
+/**       - SendKeys          - LVL1 Block
+/**       - Click             - LVL1 Block
+/**       - ExecuteScript     - LVL1 Block
+/**       - Click             - LVL1 Block
+/**   - SetProjectStatus      - LVL2 Block
+/**       - Click             - LVL1 Block
+/**       - Click             - LVL1 Block
+/**   - Click                 - LVL1 Block
+/**   - CloseBrowser          - LVL1 Block

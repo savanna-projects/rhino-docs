@@ -1,0 +1,42 @@
+[test-id]         Test010Flat
+[test-scenario]   verify that taks created when creating a task under an existing project
+[test-priority]   1 - critical
+[test-severity]   1 - critical
+[test-tolerance]  0%
+
+[test-actions]
+/** LOGIN
+1.  go to url {open-project application}
+2.  click on {sign in menu-item}
+3.  send keys {open-project user name} into {user name text-box}
+4.  send keys {open-project password} into {password text-box}
+5.  click on {sign in button}
+/** FIND AND OPEN PROJECT PACKAGES
+6.  click on {select a project}
+7.  send keys {{$ --keys:Demo project --interval:50}} into {project search text-box}
+8.  click on {demo project list-item}
+9.  click on {work packages menu}
+/** SAVE TOTAL TASK NUMBER
+10. register parameter {{$ --name:TasksBefore --scope:session}} take {pagination range} with regex {(?<=\/)\d+(?=\)$)}
+/** CREATE A TASK
+11. register parameter {{$ --name:TaskName --scope:session}} take {unique task name}
+12. click on {create button}
+13. click on {task list-item}
+14. send keys {{$getparam --name:TaskName --scope:session}} into {new task text-box}
+15. click on {save new task button}
+/** FORCE WAITING FOR CREATION TO BE COMPLETED
+16. wait for element on {task create success notification}
+/** RE-COLLECT
+17. register parameter {{$ --name:TasksAfter --scope:session}} take {pagination range} with regex {(?<=\/)\d+(?=\)$)}
+/** EXPLICIT FILTER
+18. click on {task filter button}
+19. send keys {{$ --keys:{{$getparam --name:TaskName --scope:session}} --interval:50}} into {task filter text-box}
+/** COMPLETE
+20. close browser
+
+[test-expected-results]
+[5]  verify that {text} of {user menu} equal {OA}
+[13] verify that {count} status of {new task title} equal {2}
+[15] verify that {exists} status of {task name panel} equal {true}
+[17] verify that {text} of {{$getparam --name:TasksAfter --scope:session}} is greater than {{$getparam --name:TasksBefore --scope:session}}
+[19] verify that {exists} status of {task name table cell} equal {true}

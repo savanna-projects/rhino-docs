@@ -1,0 +1,16 @@
+[test-id]         Test010BusinessBlock
+[test-scenario]   verify that taks created when creating a task under an existing project
+[test-priority]   1 - critical
+[test-severity]   1 - critical
+[test-tolerance]  0%
+
+[test-data-provider]
+|app                  |user |password  |project     |
+|---------------------|-----|----------|------------|
+|http://localhost:8080|admin|qawsedrf1!|Demo project|
+|http://localhost:8080|admin|qawsedrf1!|Demo project|
+|http://localhost:8080|admin|qawsedrf1!|Demo project|
+
+[test-actions]
+1. create simple task {{$ --app:@app --user:@user --password:@password --project:@project}}
+2. close browser

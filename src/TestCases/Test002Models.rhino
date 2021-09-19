@@ -1,0 +1,16 @@
+[test-id]         Test002Flat
+[test-scenario]   verify that project updated when sending patch request
+[test-priority]   1 - critical
+[test-severity]   1 - critical
+[test-tolerance]  0%
+
+[test-actions]
+1. get project {{$ --app:http://localhost:8080 --auth:basic --id:1}}
+/** model not parsing correctly
+2. patch request {{$ --auth:basic --body:{"description":{"raw":"After update."}}}} on {http://localhost:8080/api/v3/projects/1}
+3. close browser
+
+[test-expected-results]
+[1] verify that {response_body} on {identifier} equal {demo-project}
+[1] verify that {response_body} on {description.raw} not equal {After update.}
+[2] verify that {status_code} equal {200}

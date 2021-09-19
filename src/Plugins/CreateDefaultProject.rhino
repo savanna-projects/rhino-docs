@@ -1,0 +1,24 @@
+[test-id]         CreateDefaultProject
+[test-scenario]   Performs a project creation routine with default settings and only mandatory fields.
+
+[test-parameters]
+|Parameter  |Description             |
+|-----------|------------------------|
+|name       |The project name.       |
+|description|The project description.|
+
+[test-actions]
+1. click on {add project button}
+2. register parameter {{$ --name:ProjectName --scope:session}} take {@name}
+3. send keys {{$getparam --name:ProjectName --scope:session}} into {project name text-box}
+4. click on {advanced settings button}
+5. execute script {arguments[0].innerHTML='@description'} on {project description}
+6. click on {project save button}
+
+[test-expected-results]
+[6] verify that {exists} of {//a[./span[.='{{$getparam --name:ProjectName --scope:session}}']]} equal {true}
+
+[test-examples]
+|Example                                                  |Description                         |
+|---------------------------------------------------------|------------------------------------|
+|create default project {{$ --name:Foo --description:Bar}}|Performs a project creation routine.|

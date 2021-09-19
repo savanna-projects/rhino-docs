@@ -1,0 +1,14 @@
+[test-id]         Test001Models
+[test-scenario]   verify that project fetched when sending get project request
+[test-priority]   1 - critical
+[test-severity]   1 - critical
+[test-tolerance]  0%
+
+[test-actions]
+1. get request {{$ --auth:basic}} on {http://localhost:8080/api/v3/projects/1}
+2. close browser
+
+[test-expected-results]
+[1] verify that {status_code} equal {200}
+[1] verify that {response_body} on {identifier} equal {demo-project}
+[1] verify that {response_body} on {description.raw} equal {This is a short summary of the goals of this demo project.}
