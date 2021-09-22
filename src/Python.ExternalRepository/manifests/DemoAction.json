@@ -1,0 +1,25 @@
+{
+  "description": "Demo plugin for external repository integration example.",
+  "examples": [
+    {
+      "actionExample": {
+        "actionType": "DemoAction",
+        "argument": "foo bar",
+        "elementToActOn": "(//table//a)[1]"
+      }
+    }
+  ],
+  "name": "DemoAction",
+  "properties": {
+    "argument": "Click action conditions and additional information.",
+    "elementToActOn": "The locator value by which the element will be found.",
+    "locator": "The locator type by which the element will be found."
+  },
+  "scope": [
+    "web",
+    "mobile-web",
+    "mobile-native"
+  ],
+  "summary": "Clicks the mouse at the last known mouse coordinates or on the specified element.",
+  "testOn": "https://gravitymvctestapplication.azurewebsites.net/instructor"
+}
