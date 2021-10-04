@@ -18,6 +18,7 @@ services:
     volumes:
       - D:/DockerVolumes/Rhino/Outputs:/app/Outputs
       - D:/DockerVolumes/Rhino/Data:/app/Data
+      - D:/DockerVolumes/Rhino/ApiDocumentation:/app/ApiDocumentation
 
   chromedriver:
     image: selenium/standalone-chrome:3.141.59-dubnium
