@@ -16,9 +16,8 @@ services:
       - 9001:9001
       - 9000:9000
     volumes:
-      - D:/DockerVolumes/Rhino/Outputs:/app/Outputs
-      - D:/DockerVolumes/Rhino/Data:/app/Data
-      - D:/DockerVolumes/Rhino/ApiDocumentation:/app/ApiDocumentation
+      - C:/DockerVolumes/Rhino/Outputs:/app/Outputs # You need to provide a vaild local folder.
+      - C:/DockerVolumes/Rhino/Data:/app/Data       # You need to provide a vaild local folder.
 
   chromedriver:
     image: selenium/standalone-chrome:3.141.59-dubnium

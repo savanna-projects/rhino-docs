@@ -6,7 +6,7 @@
 
 [test-actions]
 1. go to url {open-project application}
-2. login to open project {{$ --user:open-project user name --password:open-project password}}
+2. login to open project {{$ --user:open-project user name --password:open-project password}} on {element} using {css selector} from {attribute} filter {regex}
 3. create default project {{$ --name:unique project name --description:Created by Automation Script.}}
 4. set project status {{$ --status:On track}}
 5. click on {work packages menu}
