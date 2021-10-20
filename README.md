@@ -1,8 +1,9 @@
 # Rhino API Documentation
+## Units
+* [Create Rhino API Account - _**Free!**_](./docs/Unit.CreateRhinoAccount.md)
+
+## Modules - Installations & Deployment
+* [Walkthrough: Deploy Rhino API Standalone](./docs/Walkthrough.DeployRhinoApi/00.Module.md)
+
 ## Learning Path
-* [Rhino API Course: VS Code & Open Project]()
-
-
-## Modules
-* [Tutorial: Setup Automation and Development Environment](./docs/Tutorials.SetupEnvironment/00.Module.md)
-* [Tutorial: Rhino API, Open Project](./docs/Tutorials.OpenProject/00.Module.md)
+* [Rhino API Course: VS Code & Open Project](./docs/Tutorials.OpenProject/00.Module.md)
