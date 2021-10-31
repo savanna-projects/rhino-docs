@@ -6,7 +6,7 @@
 	},
 	"connectorConfiguration": {
 		"collection": null,
-		"connector": "connector_text",
+		"connector": "ConnectorText",
 		"password": null,
 		"project": null,
 		"userName": null
@@ -17,8 +17,8 @@
 	},
 	"driverParameters": [
 		{
-			"driver": "MockWebDriver",
-			"driverBinaries": "D:\\AutomationEnvironment\\WebDrivers"
+			"driver": "ChromeDriver",
+			"driverBinaries": "."
 		}
 	],
 	"engineConfiguration": {

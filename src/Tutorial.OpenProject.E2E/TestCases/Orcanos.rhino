@@ -1,0 +1,117 @@
+[test-id]         RHINO-01
+[test-scenario]   verify that expected result when action taken
+
+[test-actions]
+/**┌─ [Login] ───────────────────────────────────
+/**|
+/**│ TODO: Create as Rhino plugin.
+/**│ login {{$ --user:<user> --password:<password>}}
+/**└─────────────────────────────────────────────
+1.  go to url {https://integ.orcanos.com/automationsandbox/web}
+2.  send keys {Automation} into {Username} by {id}
+3.  send keys {Admin@123} into {Password} by {id}
+4.  click on {//button[@type='submit' and contains(.,'Log In')]}
+5.  wait for url filter {(?i)Dashboard/?$}
+/**┌─ [Find Project] ────────────────────────────
+/**|
+/**│ TODO: Create as Rhino plugin.
+/**│ find project {{$ --name:<projectName>}}
+/**└─────────────────────────────────────────────
+6.  click on {//span[@class='select2-selection select2-selection--single'][@role='combobox'][@aria-labelledby='select2-Orcanos-Project-container']}
+7.  send keys {{$ --keys:Rhino_Automation_Project (1.0) --interval:50}} into {//input[@type='search' and @role='textbox']}
+8.  click on {//li[contains(.,'Rhino_Automation_Project (1.0)')]}
+9.  wait for url filter {(?i)\d+.QPackItems.Listing/?$}
+/**┌─ [Main Menu - Product Tree] ────────────────
+/**|
+/**│ TODO: Create as Rhino plugin.
+/**│ main menu {{$ --item:<itemName>}}
+/**└─────────────────────────────────────────────
+10. click on {//a[@data-original-title='Main Menu']}
+11. click on {//a[contains(.,'Product Tree')]}
+/**
+/** Free Actions
+12. wait for url filter {(?i)ProductTree/?$}
+/**┌─ [Product Tree - Add Risk] ─────────────────
+/**|
+/**│ TODO: Create as Rhino plugin.
+/**│ product tree add risk {{$ --item:<actionName>}}
+/**└─────────────────────────────────────────────
+13. context click on {//ul[@class='jstree-no-dots']//li[@objtype='PROJECT']}
+14. click on {//a[contains(.,'Add Item')]}
+15. click on {//span[@id='select2-SItemType-container']}
+16. send keys {{$ --keys:Risk --interval:50}} into {//input[@class='select2-search__field']}
+17. click on {//li[contains(.,'Risk')][@class='select2-results__option select2-results__option--highlighted']}
+18. click on {//input[@value='Create']}
+19. register parameter {{$ --name:get_random_risk_number --scope:session}} take {{$date --format:yyyyMMddhhmmss}}
+20. send keys {Risk_{{$getparam --name:get_random_risk_number --scope:session}}} into {//div[./div/div/label[contains(.,'Name')]]//textarea}
+21. move to element on {//label[contains(.,'P2')]}
+22. click on {//span[@id='select2-CS3-container']}
+23. click on {//li[contains(.,'{{$rndnum --min:1 --max:5}}-')]}
+24. click on {//span[@id='select2-CS4-container']}
+25. click on {//li[contains(.,'{{$rndnum --min:2 --max:5}}-')]}
+26. click on {//span[@id='select2-CS11-container']}
+27. click on {//li[contains(.,'{{$rndnum --min:3 --max:5}}-')]}
+28. click on {//a[.='Save']}
+/**┌─ [Notification - Messages] ─────────────────
+/**|
+/**│ TODO: Create as Rhino plugin.
+/**│ wait for message {{$ --pattern:<regex>}}
+/**└─────────────────────────────────────────────
+29. wait for element {{$ --until:visible}} on {(//div[@id='showMessage' and @class='success']//*[not(.='')])[last()]}
+30. wait for element {{$ --until:hidden}} on {(//div[@id='showMessage' and @class='success']//*[not(.='')])[last()]}
+/**┌─ [Product Tree - Edit Risk] ────────────────
+/**└─────────────────────────────────────────────
+31. click on {//span[@class='custom-icons edit-iconsk']}
+32. send keys {Edited_} into {//div[./div/div/label[contains(.,'Name')]]//textarea}
+33. move to element on {//label[contains(.,'P2')]}
+34. click on {//span[@id='select2-CS3-container']}
+35. click on {//li[contains(.,'{{$rndnum --min:1 --max:5}}-')]}
+36. click on {//span[@id='select2-CS4-container']}
+37. click on {//li[contains(.,'{{$rndnum --min:2 --max:5}}-')]}
+38. click on {//span[@id='select2-CS11-container']}
+39. click on {//li[contains(.,'{{$rndnum --min:3 --max:5}}-')]}
+40. click on {//a[.='Save']}
+/**┌─ [Notification - Messages] ─────────────────
+/**|
+/**│ TODO: Create as Rhino plugin.
+/**│ wait for message {{$ --pattern:<regex>}}
+/**└─────────────────────────────────────────────
+41. wait for element {{$ --until:visible}} on {(//div[@id='showMessage' and @class='success']//*[not(.='')])[last()]}
+42. wait for element {{$ --until:hidden}} on {(//div[@id='showMessage' and @class='success']//*[not(.='')])[last()]}
+/**
+/** Free Actions
+43. wait {3000}
+44. click on {//a[@data-original-title='Search']}
+45. send keys {Risk_{{$getparam --name:get_random_risk_number --scope:session}}} into {txtProductTreeSearch} by {id}
+46. keyboard {Enter} on {txtProductTreeSearch} by {id}
+47. click on {//a[contains(.,'{{$getparam --name:get_random_risk_number}}')}
+48. wait {3000}
+49. register parameter {get_risk_item_id} take {//span[contains(.,'RISK-')]} filter {\d+}
+50. execute script {arguments[0].value='';} on {txtProductTreeSearch} by {id}
+51. send keys {{$getparam --name:get_risk_item_id}}} into {txtProductTreeSearch} by {id}
+52. close browser
+
+[test-expected-results]
+/**┌─ [Login] ───────────────────────────────────
+/**|
+/**│ TODO: Create as Rhino plugin.
+/**│ login {{$ --user:<user> --password:<password>}}
+/**└─────────────────────────────────────────────
+[2]  verify that {attribute} from {value} of {Username} by {id} match {Automation}
+[3]  verify that {attribute} from {value} of {Password} by {id} match {Admin@123}
+[5]  verify that {url} match {(?i)Dashboard/?}
+/**┌─ [Find Project] ────────────────────────────
+/**|
+/**│ TODO: Create as Rhino plugin.
+/**│ TODO: Fix a bug on UrlMatch assertion - false positive.
+/**│ find project {{$ --name:<projectName>}}
+/**└─────────────────────────────────────────────
+[9]  verify that {url} match {(?i)\d+.QPackItems.Listing/?$}
+/**┌─ [Notification - Messages] ─────────────────
+/**|
+/**│ TODO: Create as Rhino plugin.
+/**│ wait for message {{$ --pattern:<regex>}}
+/**└─────────────────────────────────────────────
+[29] verify that {text} of {(//div[@id='showMessage' and @class='success']//*[not(.='')])[last()]} match {(?i)Risk added successfully}
+[41] verify that {text} of {(//div[@id='showMessage' and @class='success']//*[not(.='')])[last()]} match {(?i)Risk updated successfully}
+[47] verify that {exists} status of {//a[contains(.,'{{$getparam --name:get_random_risk_number}}')]} equal {true}
