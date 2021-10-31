@@ -8,8 +8,8 @@
 /**│ login {{$ --user:<user> --password:<password>}}
 /**└─────────────────────────────────────────────
 1.  go to url {https://integ.orcanos.com/automationsandbox/web}
-2.  send keys {Automation} into {Username} by {id}
-3.  send keys {Admin@123} into {Password} by {id}
+2.  send keys {a} into {Username} by {id}
+3.  send keys {a} into {Password} by {id}
 4.  click on {//button[@type='submit' and contains(.,'Log In')]}
 5.  wait for url filter {(?i)Dashboard/?$}
 /**┌─ [Find Project] ────────────────────────────
