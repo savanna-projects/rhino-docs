@@ -8,9 +8,9 @@
 /**│ login {{$ --user:<user> --password:<password>}}
 /**└─────────────────────────────────────────────
 1.  go to url {https://integ.orcanos.com/automationsandbox/web}
-2.  send keys {a} into {Username} by {id}
-3.  send keys {a} into {Password} by {id}
-4.  click on {//button[@type='submit' and contains(.,'Log In')]}
+2.  send keys {Automation} into {Username} by {id}
+3.  send keys {Admin@123} into {Password} by {id}
+4.  click on {//button[contains(.,'Log In')]}
 5.  wait for url filter {(?i)Dashboard/?$}
 /**┌─ [Find Project] ────────────────────────────
 /**|
@@ -84,12 +84,32 @@
 44. click on {//a[@data-original-title='Search']}
 45. send keys {Risk_{{$getparam --name:get_random_risk_number --scope:session}}} into {txtProductTreeSearch} by {id}
 46. keyboard {Enter} on {txtProductTreeSearch} by {id}
-47. click on {//a[contains(.,'{{$getparam --name:get_random_risk_number}}')}
+47. click on {//a[contains(.,'{{$getparam --name:get_random_risk_number --scope:session}}')]}
 48. wait {3000}
-49. register parameter {get_risk_item_id} take {//span[contains(.,'RISK-')]} filter {\d+}
+49. register parameter {{$ --name:get_risk_item_id --scope:session}} take {//span[contains(.,'RISK-')]} filter {\d+}
 50. execute script {arguments[0].value='';} on {txtProductTreeSearch} by {id}
-51. send keys {{$getparam --name:get_risk_item_id}}} into {txtProductTreeSearch} by {id}
-52. close browser
+51. send keys {{$getparam --name:get_risk_item_id --scope:session}} into {txtProductTreeSearch} by {id}
+52. keyboard {Enter} on {txtProductTreeSearch} by {id}
+53. wait {3000}
+54. click on {//a[contains(.,'{{$getparam --name:get_random_risk_number --scope:session}}')]}
+55. send keys {Risk_{{$getparam --name:get_random_risk_number --scope:session}}} into {txtQPackItemsSearch} by {id}
+56. click on {//button[@class='btn btn-default btnSearchIcon']//span[@class='glyphicon glyphicon-search']}
+57. wait for element {{$ --until:visible}} on {//a[.='RISK-{{$getparam --name:get_item_risk_id --scope:session}}']}
+58. wait {3000}
+59. execute script {arguments[0].value='';} on {txtQPackItemsSearch} by {id}
+60. send keys {{$getparam --name:get_risk_item_id --scope:session}} into {txtQPackItemsSearch} by {id}
+61. click on {//button[@class='btn btn-default btnSearchIcon']//span[@class='glyphicon glyphicon-search']}
+62. wait for element {{$ --until:visible}} on {//a[.='RISK-{{$getparam --name:get_item_risk_id --scope:session}}']}
+63. click on {//a[@data-original-title='Main Menu']}
+64. click on {//a[contains(.,'Work Items')]}
+65. scroll {1000} on {//div[@id='Orcanos-Left-Pane']/div[@id and not(@id='Orcanons-Fixed-Left')]}
+66. click on {//a[@id='RISK']}
+67. click {//a[contains(.,'Create')]}
+68. send keys {Risk_filter_{{$getparam --name:get_random_risk_number --scope:session}}} into {//input[@id='FilterName']}
+69. click on {Save} by {link text}
+70. wait for element {{$ --until:visible}} on {//div[@id='showMessage' and @class='success']}
+71. wait {3000}
+72. close browser
 
 [test-expected-results]
 /**┌─ [Login] ───────────────────────────────────
@@ -114,4 +134,7 @@
 /**└─────────────────────────────────────────────
 [29] verify that {text} of {(//div[@id='showMessage' and @class='success']//*[not(.='')])[last()]} match {(?i)Risk added successfully}
 [41] verify that {text} of {(//div[@id='showMessage' and @class='success']//*[not(.='')])[last()]} match {(?i)Risk updated successfully}
-[47] verify that {exists} status of {//a[contains(.,'{{$getparam --name:get_random_risk_number}}')]} equal {true}
+[47] verify that {exists} status of {//a[contains(.,'{{$getparam --name:get_random_risk_number --scope:session}}')]} equal {true}
+/**
+/** Free Assersions
+[54] verify that {exists} status of {//a[contains(.,'{{$getparam --name:get_random_risk_number --scope:session}}')]} equal {true}
