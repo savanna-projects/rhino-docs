@@ -17,7 +17,7 @@ def handle_internal_error(e):
     return 'got an error', 500
 
 
-@app.route('/api/v0/gravity/action/<_id>', methods=['GET'])
+@app.route('/api/v0/gravity/actions/<_id>', methods=['GET'])
 def get(_id):
     try:
         # setup
@@ -34,7 +34,7 @@ def get(_id):
         return app.response_class(status=404)
 
 
-@app.route('/api/v0/gravity/action', methods=['POST'])
+@app.route('/api/v0/gravity/actions/invoke', methods=['POST'])
 def invoke():
     # setup
     action_request = request.json
