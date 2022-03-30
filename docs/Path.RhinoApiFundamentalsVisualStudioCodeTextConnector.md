@@ -22,7 +22,7 @@ After completing this learning path, you'll be able to:
 
 ## Modules in this learning path
 
-### [Deploy Rhino API](./Walkthrough.DeployRhinoApi/00.Module.md)
+### Deploy Rhino API
 
 52 min · Module · 6 Units · Level ★★☆☆☆
 
@@ -32,7 +32,7 @@ Setup `Rhino API` instance for end to end UI and API automation testing for [Rhi
 
 ### :arrow_forward: [START](./Walkthrough.DeployRhinoApi/00.Module.md)
 
-### [Setup Automation and Development Environment](./Tutorials.SetupEnvironment/00.Module.md)
+### Setup Automation and Development Environment
 
 88 min · Module · 10 Units · Level ★★★☆☆
 
@@ -42,7 +42,7 @@ Setup an automation environment for end to end UI and API automation testing for
 
 ### :arrow_forward: [START](./Tutorials.SetupEnvironment/00.Module.md)
 
-### [Test Automation Project for Software](./Tutorials.OpenProject/00.Module.md)
+### Test Automation Project for Software
 
 00 min · Module · 0 Units · Level ★★★☆☆
 
