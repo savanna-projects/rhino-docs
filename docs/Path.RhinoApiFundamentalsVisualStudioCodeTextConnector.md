@@ -20,8 +20,6 @@ After completing this learning path, you'll be able to:
 * You should be familiar with basic automation concepts and terminology.
 * An understanding of dockers and containers is helpful, but isn't necessary.
 
-### :arrow_forward: START
-
 ## Modules in this learning path
 
 ### [Deploy Rhino API](./Walkthrough.DeployRhinoApi/00.Module.md)
