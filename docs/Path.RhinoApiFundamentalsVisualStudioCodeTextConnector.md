@@ -24,30 +24,30 @@ After completing this learning path, you'll be able to:
 
 ### Deploy Rhino API
 
-52 min · Module · 6 Units · Level ★★☆☆☆
+~52 min · Module · 6 Units · Level ★★☆☆☆
 
 `Beginner` `Rhino` `Automation` `WebDriver` `Environment`
 
 Setup `Rhino API` instance for end to end UI and API automation testing for [Rhino API Automation platform](https://github.com/savanna-projects/rhino-agent).
 
-### :arrow_forward: [START](./Walkthrough.DeployRhinoApi/00.Module.md)
+[START](./Walkthrough.DeployRhinoApi/00.Module.md) :arrow_forward:
 
 ### Setup Automation and Development Environment
 
-88 min · Module · 10 Units · Level ★★★☆☆
+~88 min · Module · 10 Units · Level ★★★☆☆
 
 `Beginner` `Rhino` `Automation` `WebDriver` `Environment`
 
 Setup an automation environment for end to end UI and API automation testing for [Rhino API Automation platform](https://github.com/savanna-projects/rhino-agent).
 
-### :arrow_forward: [START](./Tutorials.SetupEnvironment/00.Module.md)
+[START](./Tutorials.SetupEnvironment/00.Module.md) :arrow_forward:
 
-### Test Automation Project for Software
+### Test Automation Project for [Open Project](https://www.openproject.org) Software
 
-00 min · Module · 0 Units · Level ★★★☆☆
+~400 min · Path · 4 Modules · Level ★★★☆☆
 
 `Beginner` `Rhino` `Automation` `WebDriver` `OpenProject`
 
 Implement an end to end automation solution for ["OpenProject"](https://www.openproject.org) Software with Rhino API.
 
-### :arrow_forward: [START](./Tutorials.OpenProject/00.Module.md)
+[START](./Tutorials.OpenProject/Path.AutomationForOpenProject.md) :arrow_forward:
