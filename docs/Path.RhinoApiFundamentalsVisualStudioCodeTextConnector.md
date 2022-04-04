@@ -1,6 +1,6 @@
 # Rhino API Fundamentals: Visual Studio Code & Text Connector Integration
 
-88 min · Learning Path · 2 Modules · Level ★★★☆☆
+~542 min · Learning Path · 1 Path · 2 Modules · 1 Unit · Level ★★★☆☆
 
 `Beginner` `Rhino` `Automation` `WebDriver` `Environment` `Visual Studio Code`  
 
@@ -20,17 +20,27 @@ After completing this learning path, you'll be able to:
 * You should be familiar with basic automation concepts and terminology.
 * An understanding of dockers and containers is helpful, but isn't necessary.
 
-## Modules in this learning path
+## In this learning path
 
-### Deploy Rhino API
+### Create a Free Rhino API Account
 
-~52 min · Module · 6 Units · Level ★★☆☆☆
+~52 min · Unit · Level ★☆☆☆☆
 
 `Beginner` `Rhino` `Automation` `WebDriver` `Environment`
 
-Setup `Rhino API` instance for end to end UI and API automation testing for [Rhino API Automation platform](https://github.com/savanna-projects/rhino-agent).
+Create a new, free, [Rhino API Automation Platform](https://github.com/savanna-projects/rhino-agent) account.
 
-[START](./Walkthrough.DeployRhinoApi/00.Module.md) :arrow_forward:
+[Start](./Unit.CreateRhinoAccount.md) :arrow_forward:
+
+### Deploy Rhino API
+
+~2 min · Module · 6 Units · Level ★★☆☆☆
+
+`Beginner` `Rhino` `Automation` `WebDriver` `Environment`
+
+Setup _**Rhino API**_ instance for end to end UI and API automation testing for [Rhino API Automation Platform](https://github.com/savanna-projects/rhino-agent).
+
+[Start](./Module.DeployRhinoApi/00.Module.md) :arrow_forward:
 
 ### Setup Automation and Development Environment
 
@@ -38,9 +48,9 @@ Setup `Rhino API` instance for end to end UI and API automation testing for [Rhi
 
 `Beginner` `Rhino` `Automation` `WebDriver` `Environment`
 
-Setup an automation environment for end to end UI and API automation testing for [Rhino API Automation platform](https://github.com/savanna-projects/rhino-agent).
+Setup an automation environment for end to end UI and API automation testing for [Rhino API Automation Platform](https://github.com/savanna-projects/rhino-agent).
 
-[START](./Tutorials.SetupEnvironment/00.Module.md) :arrow_forward:
+[Start](./Module.SetupEnvironment/00.Module.md) :arrow_forward:
 
 ### Test Automation Project for [Open Project](https://www.openproject.org) Software
 
@@ -48,6 +58,6 @@ Setup an automation environment for end to end UI and API automation testing for
 
 `Beginner` `Rhino` `Automation` `WebDriver` `OpenProject`
 
-Implement an end to end automation solution for ["OpenProject"](https://www.openproject.org) Software with Rhino API.
+Implement an end to end automation solution for ["Open Project"](https://www.openproject.org) Software with [Rhino API Automation Platform](https://github.com/savanna-projects/rhino-agent).
 
-[START](./Tutorials.OpenProject/Path.AutomationForOpenProject.md) :arrow_forward:
+[Start](./Path.OpenProject/Path.AutomationForOpenProject.md) :arrow_forward:
