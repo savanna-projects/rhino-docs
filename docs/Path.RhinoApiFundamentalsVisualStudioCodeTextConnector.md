@@ -24,7 +24,7 @@ After completing this learning path, you'll be able to:
 
 ### Create a Free Rhino API Account
 
-~52 min · Unit · Level ★☆☆☆☆
+~2 min · Unit · Level ★☆☆☆☆
 
 `Beginner` `Rhino` `Automation` `WebDriver` `Environment`
 
@@ -34,7 +34,7 @@ Create a new, free, [Rhino API Automation Platform](https://github.com/savanna-p
 
 ### Deploy Rhino API
 
-~2 min · Module · 6 Units · Level ★★☆☆☆
+~52 min · Module · 6 Units · Level ★★☆☆☆
 
 `Beginner` `Rhino` `Automation` `WebDriver` `Environment`
 
