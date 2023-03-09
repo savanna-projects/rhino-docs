@@ -1,7 +1,8 @@
+import json
 import os
 import selenium.webdriver.support.expected_conditions as ec
 
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
@@ -17,18 +18,40 @@ def handle_internal_error(e):
     return 'got an error', 500
 
 
+@app.route('/api/v0/gravity/actions', methods=['GET'])
+def get_actions():
+    try:
+        # setup
+        manifests_path = os.path.join(f'{root_dir}', 'manifests')
+        files = os.listdir(manifests_path)
+        manifests = []
+
+        # read manifest
+        for file in files:
+            file_path = os.path.join(manifests_path, file)
+            with open(file_path) as f:
+                content = json.loads(''.join(f.readlines()))
+                manifests.append(content)
+
+        # demo plugin
+        return jsonify(manifests)
+    except Exception as e:
+        print(e)
+        return app.response_class(status=404)
+
+
 @app.route('/api/v0/gravity/actions/<_id>', methods=['GET'])
-def get(_id):
+def get_action(_id):
     try:
         # setup
         manifest = os.path.join(f'{root_dir}', 'manifests', f'{_id}.json')
 
         # read manifest
         with open(manifest) as f:
-            content = f.readlines()
+            content = json.loads(''.join(f.readlines()))
 
         # demo plugin
-        return app.response_class(response=content, mimetype='application/json')
+        return jsonify(content)
     except Exception as e:
         print(e)
         return app.response_class(status=404)
