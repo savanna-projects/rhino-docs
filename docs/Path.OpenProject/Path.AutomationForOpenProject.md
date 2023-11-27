@@ -28,4 +28,6 @@ After completing this learning path, you'll be able to:
 
 Implement an end to end automation solution for ["Open Project"](https://www.openproject.org) Software with Rhino API.
 
-[Start](./Module.01/00.Module.md) :arrow_forward:
+[![Start Button]](./Module.01/00.Module.md)
+
+[Start Button]: ../Images/StartButton.svg
